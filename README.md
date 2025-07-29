@@ -1,49 +1,51 @@
-# 📈 Stock Price Prediction using LSTM
+# 📈 Stock Price Predictor with LSTM
 
-This project uses historical stock data to predict future stock prices using a Long Short-Term Memory (LSTM) neural network. The implementation is done using TensorFlow and Keras, and the focus is on closing price prediction based on past trends.
-
----
-
-## ✅ Project Goals
-
-- Predict next-day stock prices using the past 60 days' data.
-- Train an LSTM model on historical price data.
-- Visualize predicted vs actual prices.
-- Extend model to forecast future prices beyond available data.
+This is a web-based application that predicts stock prices using a pre-trained LSTM (Long Short-Term Memory) model. It allows users to view actual vs predicted prices, and also forecast the next day's closing price based on historical data.
 
 ---
 
-## 🔧 Tools & Libraries
-
-- **Data Collection**: yfinance  
-- **Processing**: pandas, numpy, sklearn  
-- **Modeling**: TensorFlow, Keras  
-- **Visualization**: matplotlib  
-
----
-
-## 📌 Work Done So Far
-
-1. **Collected historical stock data** (e.g., Apple - AAPL) from 2015–2025 using `yfinance`.
-2. **Selected and normalized** the closing price data for training.
-3. **Created time series sequences**: for each 60-day window, the model predicts the next (61st) day's price.
-4. **Built and trained** a stacked LSTM model with dropout layers to reduce overfitting.
-5. **Made predictions and plotted results** showing predicted vs actual prices using test data.
+## 🚀 Features
+- Input any stock ticker (e.g., AAPL, MSFT, TSLA)
+- Select a date range for historical analysis
+- Visualize actual vs predicted closing prices
+- Predict the next day's closing price
+- Simple and interactive Streamlit UI
 
 ---
 
-## 🔮 Next Steps
+## 🔧 Tools Used
+- **Python**, **Streamlit**, **Pandas**, **NumPy**
+- **TensorFlow/Keras** (LSTM model)
+- **yfinance** (for live stock data)
+- **Matplotlib** (for plotting)
+- **scikit-learn** (for scaling)
 
-- Predicting future prices by feeding recent 60-day sequences to the model recursively.
-- Saving and exporting the model for deployment or future reuse.
-- Building a simple GUI using Streamlit or Tkinter to visualize live predictions.
+---
+
+## 🔄 Workflow
+
+1. **User Input:**
+   - Ticker Symbol
+   - Start & End Date
+   - Option to predict next day's price
+
+2. **Data Collection:**
+   - Live stock data is fetched using `yfinance`
+
+3. **Preprocessing:**
+   - Data is scaled and features like SMA & RSI are computed
+
+4. **Prediction:**
+   - The LSTM model (`stock_lstm_model.keras`) is used to predict stock prices
+   - Visual plots and predicted values are displayed
+
+5. **Next-Day Forecast:**
+   - The model uses recent history to forecast the next closing price
 
 ---
 
-## 🌱 Possible Extensions
+## 🌐 Run the App Locally
 
-- Including other features like volume, open/high/low prices.
-- Adding sentiment analysis or external indicators to improve accuracy.
-- Experimenting with GRU, attention mechanisms, or hybrid models.
-
----
+```bash
+pip install -r requirements.txt
+streamlit run app.py
