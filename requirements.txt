@@ -53,6 +53,7 @@ pycparser==2.22
 pydeck==0.9.1
 Pygments==2.19.2
 pyparsing==3.2.3
+python==3.11.9
 python-dateutil==2.9.0.post0
 pytz==2025.2
 referencing==0.36.2
